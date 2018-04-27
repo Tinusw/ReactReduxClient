@@ -8,8 +8,6 @@ import App from "./App";
 // Helpers
 import reactElementToJSXString from "react-element-to-jsx-string";
 
-class TestComponent extends React.Component {}
-
 describe("AppComponent", () => {
   const renderer = new ShallowRenderer();
   const actual = renderer.render(<App />);

@@ -3,13 +3,11 @@ import configureMockStore from "redux-mock-store";
 import thunk from "redux-thunk";
 import moxios from "moxios";
 
-import { storageMock } from "../testing/mock_local_storage";
+import "../testing/mock_local_storage";
 
 import { signinUser, signoutUser, signUpUser } from "./index";
 
 import { AUTH_USER, AUTH_ERROR, UNAUTH_USER } from "./types";
-
-global.localStorage = storageMock();
 
 const middlewares = [thunk];
 
@@ -42,6 +40,7 @@ describe("AUTH ACTION CREATORS", () => {
           }
         });
       });
+
       const expectedAction = { type: AUTH_USER };
       let testData = { email: "test1@test.com", password: "1234" };
       return store.dispatch(signinUser(testData)).then(() => {

@@ -3,13 +3,11 @@ import configureMockStore from "redux-mock-store";
 import thunk from "redux-thunk";
 import moxios from "moxios";
 
-import { storageMock } from "../testing/mock_local_storage";
+import "../testing/mock_local_storage";
 
 import { fetchCampaigns } from "./index";
 
 import { FETCH_CAMPAIGNS, AUTH_ERROR } from "./types";
-
-global.localStorage = storageMock();
 
 const middlewares = [thunk];
 

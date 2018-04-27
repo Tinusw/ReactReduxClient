@@ -26,8 +26,10 @@
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
     "expect": "^22.4.3",
+    "mock-local-storage": "^1.0.5",
     "moxios": "^0.4.0",
     "react-addons-test-utils": "^15.6.2",
+    "react-element-to-jsx-string": "^13.2.0",
     "react-test-renderer": "^16.3.2",
     "redux-mock-store": "^1.5.1"
   }
