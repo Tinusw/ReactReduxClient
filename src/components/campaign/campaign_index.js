@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import * as actions from '../../actions/index'
 
 class CampaignIndex extends Component {
-  componentDidMount() {
+  componentWillMount() {
     this.props.fetchCampaigns();
   }
 
@@ -13,6 +13,11 @@ class CampaignIndex extends Component {
         <div key={item.id}>id: {item.id} - name: {item.name} </div>
       )
     })
+  }
+
+  renderErrors(){
+    if (this.props.error && this.props.error.data)
+      return <p>{this.props.error.data}</p>
   }
 
   render() {
@@ -28,7 +33,7 @@ class CampaignIndex extends Component {
         --------------------------------------
         <h4>Fails show up here (errors from API)</h4>
         --------------------------------------
-        {this.props.error.data}
+        {this.renderErrors()}
       </div>
     )
   }
