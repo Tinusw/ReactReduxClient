@@ -7,7 +7,7 @@ import { renderField } from '../form/field'
 // Passed down to field component to enable require="true"
 const required = value => (value ? undefined : 'Required')
 
-class Signin extends Component {
+class SignIn extends Component {
   shouldComponentUpdate(nextProps) {
     if (nextProps.authenticated === true) {
       this.props.history.push("/campaign/index");
@@ -75,4 +75,4 @@ function mapStateToProps(state) {
 
 export default reduxForm({
   form: "signin"
-})(connect(mapStateToProps, actions)(Signin));
+})(connect(mapStateToProps, actions)(SignIn));

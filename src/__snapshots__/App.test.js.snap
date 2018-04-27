@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AppComponent renders correctly 1`] = `
+<div
+  className="App"
+>
+  <Connect(Header) />
+  <Route
+    component={[Function]}
+    exact={true}
+    path="/"
+  />
+  <Route
+    component={[Function]}
+    path="/signin"
+  />
+  <Route
+    component={[Function]}
+    path="/signout"
+  />
+  <Route
+    component={[Function]}
+    path="/signup"
+  />
+  <Route
+    component={[Function]}
+    path="/campaign/index"
+  />
+</div>
+`;

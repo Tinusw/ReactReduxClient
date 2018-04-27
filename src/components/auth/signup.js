@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import { connect } from "react-redux";
 import { Field, reduxForm } from "redux-form";
+import { connect } from "react-redux";
 import * as actions from "../../actions";
 import { renderField } from "../form/field";
 
@@ -85,9 +85,7 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps, actions)(
-  reduxForm({
-    form: "SignUp",
-    validate
-  })(SignUp)
-);
+export default reduxForm({
+  form: "SignUp",
+  validate
+})(connect(mapStateToProps, actions)(SignUp));
