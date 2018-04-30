@@ -3,19 +3,19 @@ import { connect } from "react-redux";
 import * as actions from "../../actions";
 
 export class SignIn extends Component {
-  shouldComponentUpdate(nextProps) {
-    if (nextProps.authenticated === true) {
-      this.props.history.push("/campaign/index");
-    }
-    return true;
-  }
-
   constructor() {
     super();
     this.state = {
       email: "",
       password: ""
     };
+  }
+
+  shouldComponentUpdate(nextProps) {
+    if (nextProps.authenticated === true) {
+      this.props.history.push("/campaign/index");
+    }
+    return true;
   }
 
   handleInputChange = event => {
@@ -46,7 +46,7 @@ export class SignIn extends Component {
           name="password"
           type="text"
         />
-        <button>Submit</button>
+        <button>Sign In</button>
       </form>
     );
   }

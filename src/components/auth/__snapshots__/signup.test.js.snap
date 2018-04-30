@@ -1,11 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<signIn/> renders correctly 1`] = `
+exports[`<signUp/> renders correctly 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <SignIn
-    signinUser={[Function]}
+  Symbol(enzyme.__unrendered__): <SignUp
+    signUpUser={[Function]}
 />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -39,10 +39,10 @@ ShallowWrapper {
           type="text"
 />,
         <button>
-          Sign In
+          Sign Up
 </button>,
       ],
-      "className": "SignIn",
+      "className": "SignUp",
       "onSubmit": [Function],
     },
     "ref": null,
@@ -102,10 +102,10 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": "Sign In",
+          "children": "Sign Up",
         },
         "ref": null,
-        "rendered": "Sign In",
+        "rendered": "Sign Up",
         "type": "button",
       },
     ],
@@ -137,10 +137,10 @@ ShallowWrapper {
             type="text"
 />,
           <button>
-            Sign In
+            Sign Up
 </button>,
         ],
-        "className": "SignIn",
+        "className": "SignUp",
         "onSubmit": [Function],
       },
       "ref": null,
@@ -200,10 +200,10 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": "Sign In",
+            "children": "Sign Up",
           },
           "ref": null,
-          "rendered": "Sign In",
+          "rendered": "Sign Up",
           "type": "button",
         },
       ],

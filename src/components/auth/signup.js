@@ -1,13 +1,16 @@
 import React, { Component } from "react";
-import { Field, reduxForm } from "redux-form";
 import { connect } from "react-redux";
 import * as actions from "../../actions";
-import { renderField } from "../form/field";
 
-// Passed down to our field component to set required="true"
-const required = value => (value ? undefined : "Required");
+export class SignUp extends Component {
+  constructor() {
+    super();
+    this.state = {
+      email: "",
+      password: ""
+    };
+  }
 
-class SignUp extends Component {
   shouldComponentUpdate(nextProps) {
     if (nextProps.authenticated === true) {
       this.props.history.push("/campaign/index");
@@ -15,67 +18,38 @@ class SignUp extends Component {
     return true;
   }
 
-  handleFormSubmit({ email, password }) {
-    this.props.signUpUser({ email, password });
-  }
+  handleInputChange = event => {
+    this.setState({
+      [event.target.name]: event.target.value
+    });
+  };
 
-  renderAlert() {
-    if (this.props.errorMessage) {
-      const [status, httpResponse] = [
-        this.props.errorMessage.data.error,
-        this.props.errorMessage.status
-      ];
-      return (
-        <div className="alert alert-danger">
-          <strong>Error</strong>: {`${status} - ${httpResponse}`}
-        </div>
-      );
-    }
-  }
+  handleSubmit = event => {
+    event.preventDefault();
+    this.props.signUpUser(this.state);
+  };
 
   render() {
-    const { handleSubmit } = this.props;
-
     return (
-      <form onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}>
-        <Field
+      <form className="SignUp" onSubmit={this.handleSubmit}>
+        <label>email</label>
+        <input
+          id="email"
+          onChange={this.handleInputChange}
           name="email"
-          component={renderField}
-          type="email"
-          validate={[required]}
-          label="Email"
+          type="text"
         />
-        <Field
+        <label>password</label>
+        <input
+          id="password"
+          onChange={this.handleInputChange}
           name="password"
-          component={renderField}
-          type="password"
-          label="Password"
-          validate={[required]}
+          type="text"
         />
-        <Field
-          name="password_confirmation"
-          component={renderField}
-          type="password"
-          label="Password Confirmation"
-          validate={[required]}
-        />
-        {this.renderAlert()}
-        <button type="submit" className="btn btn-primary">
-          Sign Up
-        </button>
+        <button>Sign Up</button>
       </form>
     );
   }
-}
-
-function validate(values) {
-  let errors = {};
-
-  if (values.password !== values.password_confirmation) {
-    errors.password = "Password and password confirmation don't match!";
-  }
-
-  return errors;
 }
 
 function mapStateToProps(state) {
@@ -85,7 +59,4 @@ function mapStateToProps(state) {
   };
 }
 
-export default reduxForm({
-  form: "SignUp",
-  validate
-})(connect(mapStateToProps, actions)(SignUp));
+export default connect(mapStateToProps, actions)(SignUp);
