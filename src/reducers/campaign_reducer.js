@@ -5,6 +5,6 @@ export default function(state = {}, action) {
     case FETCH_CAMPAIGNS:
       return { ...state, collection: action.payload };
     default:
-      return state
+      return state;
   }
 }

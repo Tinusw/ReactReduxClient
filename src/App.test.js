@@ -26,7 +26,7 @@ describe("AppComponent", () => {
     expect(
       actual_children.some(
         x =>
-          x.type.displayName.includes('Connect(Header)') &&
+          x.type.displayName.includes("Connect(Header)") &&
           x.type.WrappedComponent.toString().includes("Header")
       )
     ).toEqual(true);
@@ -36,43 +36,44 @@ describe("AppComponent", () => {
     expect(
       actual_children.some(
         x =>
-          x.props.path === '/' &&
-          x.props.component.toString().includes("Root")
+          x.props.path === "/" && x.props.component.toString().includes("Root")
       )
-    ).toEqual(true)
-  })
+    ).toEqual(true);
+  });
 
   it("renders the redux-wrapped Signin component", () => {
     expect(
       actual_children.some(
         x =>
-          x.props.path === '/signin' &&
+          x.props.path === "/signin" &&
           x.props.component.WrappedComponent.toString().includes("SignIn")
       )
-    ).toEqual(true)
-  })
+    ).toEqual(true);
+  });
 
   it("renders the redux-wrapped SignUp component", () => {
     expect(
       actual_children.some(
         x =>
-          x.props.path === '/signup' &&
+          x.props.path === "/signup" &&
           x.props.component.WrappedComponent.toString().includes("SignUp")
       )
-    ).toEqual(true)
-  })
+    ).toEqual(true);
+  });
 
   it("renders the redux-wrapped HOC AUTH component (campaign/index)", () => {
     expect(
       actual_children.some(
         x =>
-          x.props.path === '/campaign/index' &&
-          x.props.component.WrappedComponent.toString().includes("Authentication")
+          x.props.path === "/campaign/index" &&
+          x.props.component.WrappedComponent.toString().includes(
+            "Authentication"
+          )
       )
-    ).toEqual(true)
-  })
+    ).toEqual(true);
+  });
 
   it("renders all child components", () => {
-    expect(actual_children.length).toEqual(6)
-  })
+    expect(actual_children.length).toEqual(6);
+  });
 });

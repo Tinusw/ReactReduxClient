@@ -1,16 +1,16 @@
 import React from "react";
-import * as test_tools from "../../testing/test_helper.js"
+import * as test_tools from "../../testing/test_helper.js";
 
 import { SignUp } from "./signup";
 
 describe("<signUp/>", () => {
   const mockSignUpfn = jest.fn();
 
-  let actual
+  let actual;
 
   beforeEach(() => {
     actual = test_tools.shallow(<SignUp signUpUser={mockSignUpfn} />);
-  })
+  });
 
   it("renders correctly", () => {
     expect(actual).toMatchSnapshot();
@@ -34,7 +34,8 @@ describe("<signUp/>", () => {
     });
     actual.find("form").simulate("submit", { preventDefault() {} });
     expect(mockSignUpfn.mock.calls[1][0]).toEqual({
-      email: "blah@gmail.com", password: "1234"
+      email: "blah@gmail.com",
+      password: "1234"
     });
   });
 });

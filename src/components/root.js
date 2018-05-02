@@ -1,7 +1,7 @@
-import React from 'react';
+import React from "react";
 
 const Root = () => {
-  return <div>Root/Index Path</div>
-}
+  return <div>Root/Index Path</div>;
+};
 
-export default Root
+export default Root;

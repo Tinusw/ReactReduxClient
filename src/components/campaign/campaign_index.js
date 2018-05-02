@@ -1,28 +1,30 @@
-import React, { Component } from 'react'
-import { connect } from 'react-redux';
-import * as actions from '../../actions/index'
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import * as actions from "../../actions/index";
 
 class CampaignIndex extends Component {
   componentDidMount() {
     this.props.fetchCampaigns();
   }
 
-  renderItems(){
-    return this.props.campaigns.map((item) => {
+  renderItems() {
+    return this.props.campaigns.map(item => {
       return (
-        <div key={item.id}>id: {item.id} - name: {item.name} </div>
-      )
-    })
+        <div key={item.id}>
+          id: {item.id} - name: {item.name}{" "}
+        </div>
+      );
+    });
   }
 
-  renderErrors(){
+  renderErrors() {
     if (this.props.error && this.props.error.data)
-      return <p>{this.props.error.data}</p>
+      return <p>{this.props.error.data}</p>;
   }
 
   render() {
-    if(!this.props.campaigns){
-      return <div>Loading...</div>
+    if (!this.props.campaigns) {
+      return <div>Loading...</div>;
     }
 
     return (
@@ -35,7 +37,7 @@ class CampaignIndex extends Component {
         --------------------------------------
         {this.renderErrors()}
       </div>
-    )
+    );
   }
 }
 
@@ -45,4 +47,4 @@ function mapStateToProps(state) {
     error: state.auth.error
   };
 }
-export default connect(mapStateToProps, actions)(CampaignIndex)
+export default connect(mapStateToProps, actions)(CampaignIndex);
