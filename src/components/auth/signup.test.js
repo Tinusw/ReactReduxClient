@@ -22,6 +22,7 @@ describe("<signUp/>", () => {
 
   it("should call signinUser on submit", () => {
     actual.find("form").simulate("submit", { preventDefault() {} });
+
     expect(mockSignUpfn.mock.calls.length).toBe(1);
   });
 
@@ -29,13 +30,33 @@ describe("<signUp/>", () => {
     actual.find("#email").simulate("change", {
       target: { name: "email", value: "blah@gmail.com" }
     });
+
     actual.find("#password").simulate("change", {
       target: { name: "password", value: "1234" }
     });
+
+    actual.find("#passwordConfirm").simulate("change", {
+      target: { name: "passwordConfirm", value: "1234" }
+    });
+
     actual.find("form").simulate("submit", { preventDefault() {} });
+
     expect(mockSignUpfn.mock.calls[1][0]).toEqual({
       email: "blah@gmail.com",
-      password: "1234"
+      password: "1234",
+      passwordConfirm: "1234"
     });
+  });
+
+  it("should render an error div if passwords do not match", () => {
+    actual.find("#password").simulate("change", {
+      target: { name: "password", value: "1234" }
+    });
+
+    actual.find("#passwordConfirm").simulate("change", {
+      target: { name: "passwordConfirm", value: "124" }
+    });
+
+    expect(actual.find("#error").length).toBe(1);
   });
 });

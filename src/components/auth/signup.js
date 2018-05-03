@@ -7,7 +7,8 @@ export class SignUp extends Component {
     super();
     this.state = {
       email: "",
-      password: ""
+      password: "",
+      passwordConfirm: ""
     };
   }
 
@@ -29,6 +30,20 @@ export class SignUp extends Component {
     this.props.signUpUser(this.state);
   };
 
+  renderError() {
+    if (
+      this.state.passwordConfirm !== "" &&
+      this.state.password !== "" &&
+      this.state.password !== this.state.passwordConfirm
+    ) {
+      return (
+        <div className="error" id="error">
+          passwords do not match :(
+        </div>
+      );
+    }
+  }
+
   render() {
     return (
       <form className="SignUp" onSubmit={this.handleSubmit}>
@@ -38,15 +53,24 @@ export class SignUp extends Component {
           onChange={this.handleInputChange}
           name="email"
           type="text"
+          autoComplete="email"
         />
         <label>password</label>
         <input
           id="password"
           onChange={this.handleInputChange}
           name="password"
-          type="text"
+          type="password"
+        />
+        <label>confirm password</label>
+        <input
+          id="passwordConfirm"
+          onChange={this.handleInputChange}
+          name="passwordConfirm"
+          type="password"
         />
         <button>Sign Up</button>
+        {this.renderError()}
       </form>
     );
   }
