@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 
-class Header extends Component {
+export class Header extends Component {
   renderLinks() {
     if (this.props.authenticated) {
       return (
@@ -30,7 +30,7 @@ class Header extends Component {
 
   render() {
     return (
-      <nav className="navbar navbar-light">
+      <nav className="Header navbar navbar-light">
         <Link to="/" className="navbar-brand">
           Home
         </Link>
