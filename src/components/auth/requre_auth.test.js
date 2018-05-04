@@ -16,20 +16,22 @@ describe("<Authentication/>", () => {
   let MockComponent;
 
   beforeEach(() => {
-    MockComponent = () => <div className="MockComponent" />;
+    // let actual = test_tools
+    //   .shallow(<Authentication {...MockComponent} {...authed_props} />)
+    //   .dive();
+    // console.log(actual.props());
+    // let actual = test_tools.shallow(<Authentication />);
   });
 
-  it("renders its children when authenticated", () => {
+  it("successfully passes props to HOC", () => {
     const actual = test_tools.shallow(
-      <Authentication {...MockComponent} {...authed_props} />
+      <MemoryRouter>
+        <Authentication
+          {...<div className="MockComponent" />}
+          {...authed_props}
+        />
+      </MemoryRouter>
     );
-    expect(actual.find("MockComponent").length).toEqual(1);
-  });
-
-  it("doesnt render its children when not authenticated", () => {
-    const actual = test_tools.shallow(
-      <Authentication {...MockComponent} {...unauthed_props} />
-    );
-    expect(actual.find("MockComponent").length).toEqual(0);
+    expect(actual.props().children.props.authenticated).toEqual(true);
   });
 });
