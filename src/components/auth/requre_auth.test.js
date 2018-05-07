@@ -15,14 +15,6 @@ describe("<Authentication/>", () => {
 
   let MockComponent;
 
-  beforeEach(() => {
-    // let actual = test_tools
-    //   .shallow(<Authentication {...MockComponent} {...authed_props} />)
-    //   .dive();
-    // console.log(actual.props());
-    // let actual = test_tools.shallow(<Authentication />);
-  });
-
   it("successfully passes props to HOC", () => {
     const actual = test_tools.shallow(
       <MemoryRouter>
