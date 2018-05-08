@@ -16,7 +16,7 @@ describe("<Authentication/>", () => {
   let MockComponent;
 
   it("successfully passes props to HOC", () => {
-    const actual = test_tools.shallow(
+    const actual = shallow(
       <MemoryRouter>
         <Authentication
           {...<div className="MockComponent" />}

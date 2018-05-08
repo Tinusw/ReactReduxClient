@@ -6,8 +6,10 @@ Enzyme.configure({ adapter: new Adapter() });
 
 import { shallow, render, mount } from "enzyme";
 
-import expect from "expect";
+global.shallow = shallow;
+global.render = render;
+global.mount = mount;
 
 import reactElementToJSXString from "react-element-to-jsx-string";
 
-export { shallow, render, mount, expect, reactElementToJSXString };
+export { reactElementToJSXString };

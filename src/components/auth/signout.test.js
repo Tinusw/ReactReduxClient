@@ -9,7 +9,7 @@ describe("<SignOut/>", () => {
   let actual;
 
   beforeEach(() => {
-    actual = test_tools.shallow(<SignOut signoutUser={mockSignOutfn} />);
+    actual = shallow(<SignOut signoutUser={mockSignOutfn} />);
   });
 
   it("renders correctly", () => {

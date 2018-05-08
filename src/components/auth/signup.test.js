@@ -9,7 +9,7 @@ describe("<signUp/>", () => {
   let actual;
 
   beforeEach(() => {
-    actual = test_tools.shallow(<SignUp signUpUser={mockSignUpfn} />);
+    actual = shallow(<SignUp signUpUser={mockSignUpfn} />);
   });
 
   it("renders correctly", () => {

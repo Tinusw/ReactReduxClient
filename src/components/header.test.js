@@ -17,7 +17,7 @@ describe("<Header/>", () => {
 
   describe("given the user is authenticated", () => {
     beforeEach(() => {
-      actual = test_tools.render(
+      actual = render(
         <MemoryRouter>
           <Header {...authed_props} />
         </MemoryRouter>
@@ -29,7 +29,6 @@ describe("<Header/>", () => {
     });
 
     it("should have the className Header", () => {
-      // console.log(actual.props);
       expect(actual.find("Header"));
     });
 
@@ -46,7 +45,7 @@ describe("<Header/>", () => {
 
   describe("given the user is not authenticated", () => {
     beforeEach(() => {
-      actual = test_tools.render(
+      actual = render(
         <MemoryRouter>
           <Header {...unauthed_props} />
         </MemoryRouter>
