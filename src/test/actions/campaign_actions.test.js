@@ -3,11 +3,11 @@ import configureMockStore from "redux-mock-store";
 import thunk from "redux-thunk";
 import moxios from "moxios";
 
-import "../testing/mock_local_storage";
+import "../mock_local_storage";
 
-import { fetchCampaigns } from "./index";
+import { fetchCampaigns } from "../../actions/index";
 
-import { FETCH_CAMPAIGNS, AUTH_ERROR } from "./types";
+import { FETCH_CAMPAIGNS, AUTH_ERROR } from "../../actions/types";
 
 const middlewares = [thunk];
 
@@ -74,7 +74,9 @@ describe("CAMPAIGN ACTION CREATORS", () => {
     return store.dispatch(fetchCampaigns()).then(() => {
       const actualAction = store.getActions();
       expect(actualAction[0].type).toEqual(expectedAction.type);
-      expect(actualAction[0].payload.toString()).toEqual(expectedAction.payload);
+      expect(actualAction[0].payload.toString()).toEqual(
+        expectedAction.payload
+      );
     });
   });
 });

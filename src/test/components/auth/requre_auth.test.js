@@ -1,8 +1,8 @@
 import React from "react";
-import * as test_tools from "../../testing/test_helper.js";
+import * as test_tools from "../../test_helper.js";
 
 import { MemoryRouter } from "react-router-dom";
-import Authentication from "./require_auth";
+import Authentication from "../../../components/auth/require_auth";
 
 describe("<Authentication/>", () => {
   const authed_props = {

@@ -1,6 +1,6 @@
 import expect from "expect";
-import reducer from "./campaign_reducer";
-import { FETCH_CAMPAIGNS } from "../../src/actions/types";
+import reducer from "../../reducers/campaign_reducer";
+import { FETCH_CAMPAIGNS } from "../../actions/types";
 
 describe("CAMPAIGN REDUCER", () => {
   it("should return the initial state", () => {
