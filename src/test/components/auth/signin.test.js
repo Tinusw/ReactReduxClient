@@ -1,7 +1,7 @@
 import React from "react";
-import * as test_tools from "../../test_helper.js";
+import * as test_tools from "test/test_helper.js";
 
-import { SignIn } from "../../../components/auth/signin";
+import { SignIn } from "components/auth/signin";
 
 describe("<signIn/>", () => {
   const mockSignInfn = jest.fn();

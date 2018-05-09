@@ -1,8 +1,8 @@
 import React from "react";
-import * as test_tools from "../test_helper.js";
+import * as test_tools from "test/test_helper.js";
 import { MemoryRouter } from "react-router-dom";
 
-import { Header } from "../../components/header";
+import { Header } from "components/header";
 
 describe("<Header/>", () => {
   let actual;
