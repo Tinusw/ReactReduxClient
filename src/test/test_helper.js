@@ -1,10 +1,11 @@
 import React from "react";
-import Enzyme from "enzyme";
+import Enzyme, { shallow, render, mount } from "enzyme";
 import Adapter from "enzyme-adapter-react-16";
+import enzymeToJson from "enzyme-to-json";
 
 Enzyme.configure({ adapter: new Adapter() });
 
-import { shallow, render, mount } from "enzyme";
+global.enzymeToJson = enzymeToJson;
 
 global.shallow = shallow;
 global.render = render;

@@ -13,7 +13,7 @@ describe("<signUp/>", () => {
   });
 
   it("renders correctly", () => {
-    expect(actual).toMatchSnapshot();
+    expect(enzymeToJson(actual)).toMatchSnapshot();
   });
 
   it("should have the className SignUp", () => {

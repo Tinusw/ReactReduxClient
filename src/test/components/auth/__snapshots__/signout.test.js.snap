@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SignOut/> renders correctly 1`] = `
+<div
+  className="Signout"
+>
+  Signed Out
+</div>
+`;

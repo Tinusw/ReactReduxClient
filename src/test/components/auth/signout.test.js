@@ -1,7 +1,7 @@
 import React from "react";
-import * as test_tools from "../../testing/test_helper.js";
+import * as test_tools from "test/test_helper.js";
 
-import { SignOut } from "./signout";
+import { SignOut } from "components/auth/signout";
 
 describe("<SignOut/>", () => {
   const mockSignOutfn = jest.fn();
@@ -13,7 +13,7 @@ describe("<SignOut/>", () => {
   });
 
   it("renders correctly", () => {
-    expect(actual).toMatchSnapshot();
+    expect(enzymeToJson(actual)).toMatchSnapshot();
   });
 
   it("should have the className Signout", () => {

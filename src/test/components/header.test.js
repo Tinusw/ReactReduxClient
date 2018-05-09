@@ -25,7 +25,7 @@ describe("<Header/>", () => {
     });
 
     it("renders correctly", () => {
-      expect(actual).toMatchSnapshot();
+      expect(enzymeToJson(actual)).toMatchSnapshot();
     });
 
     it("should have the className Header", () => {
@@ -50,6 +50,10 @@ describe("<Header/>", () => {
           <Header {...unauthed_props} />
         </MemoryRouter>
       );
+    });
+
+    it("renders correctly", () => {
+      expect(enzymeToJson(actual)).toMatchSnapshot();
     });
 
     it("should have the className Header", () => {
