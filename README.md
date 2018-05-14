@@ -1,8 +1,6 @@
 ## Things we need to install
 
 * `brew install watchman`
-* Setup `.env`, check template for config.
-* * we're using relative paths set from `src/` so **your local paths may not work without this**
 
 ## What does this APP do?
 

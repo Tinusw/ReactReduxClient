@@ -1,7 +1,7 @@
 import React from "react";
-import * as test_tools from "test/test_helper.js";
+import * as test_tools from "../../../test/test_helper.js";
 
-import { SignOut } from "components/auth/signout";
+import { SignOut } from "../../../components/auth/signout";
 
 describe("<SignOut/>", () => {
   const mockSignOutfn = jest.fn();

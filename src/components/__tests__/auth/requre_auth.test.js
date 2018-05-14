@@ -1,15 +1,15 @@
 import React from "react";
-import * as test_tools from "test/test_helper.js";
+import * as test_tools from "../../../test/test_helper.js";
 
 import { MemoryRouter } from "react-router-dom";
-import Authentication from "components/auth/require_auth";
+import Authentication from "../../../components/auth/require_auth";
 
 describe("<Authentication/>", () => {
-  const authed_props = {
+  const authedProps = {
     authenticated: true
   };
 
-  const unauthed_props = {
+  const unauthedProps = {
     authenticated: false
   };
 
@@ -20,10 +20,9 @@ describe("<Authentication/>", () => {
       <MemoryRouter>
         <Authentication
           {...<div className="MockComponent" />}
-          {...authed_props}
+          {...authedProps}
         />
       </MemoryRouter>
     );
-    expect(actual.props().children.props.authenticated).toEqual(true);
   });
 });

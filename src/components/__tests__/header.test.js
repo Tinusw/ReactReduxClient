@@ -1,17 +1,17 @@
 import React from "react";
-import * as test_tools from "test/test_helper.js";
+import * as test_tools from "../../test/test_helper.js";
 import { MemoryRouter } from "react-router-dom";
 
-import { Header } from "components/header";
+import { Header } from "../../components/header";
 
 describe("<Header/>", () => {
   let actual;
 
-  const authed_props = {
+  const authedProps = {
     authenticated: true
   };
 
-  const unauthed_props = {
+  const unauthedProps = {
     authenticated: false
   };
 
@@ -19,7 +19,7 @@ describe("<Header/>", () => {
     beforeEach(() => {
       actual = render(
         <MemoryRouter>
-          <Header {...authed_props} />
+          <Header {...authedProps} />
         </MemoryRouter>
       );
     });
@@ -47,7 +47,7 @@ describe("<Header/>", () => {
     beforeEach(() => {
       actual = render(
         <MemoryRouter>
-          <Header {...unauthed_props} />
+          <Header {...unauthedProps} />
         </MemoryRouter>
       );
     });

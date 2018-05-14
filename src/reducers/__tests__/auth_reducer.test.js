@@ -1,6 +1,6 @@
 import expect from "expect";
-import reducer from "reducers/auth_reducer";
-import { AUTH_USER, AUTH_ERROR, UNAUTH_USER } from "actions/types";
+import reducer from "../../reducers/auth_reducer";
+import { AUTH_USER, AUTH_ERROR, UNAUTH_USER } from "../../actions/types";
 
 describe("AUTH REDUCER", () => {
   it("should return the initial state", () => {

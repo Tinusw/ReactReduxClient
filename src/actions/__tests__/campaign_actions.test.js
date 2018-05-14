@@ -3,11 +3,11 @@ import configureMockStore from "redux-mock-store";
 import thunk from "redux-thunk";
 import moxios from "moxios";
 
-import "test/mock_local_storage";
+import "../../test/mock_local_storage";
 
-import { fetchCampaigns } from "actions/index";
+import { fetchCampaigns } from "../../actions/index";
 
-import { FETCH_CAMPAIGNS, AUTH_ERROR } from "actions/types";
+import { FETCH_CAMPAIGNS, AUTH_ERROR } from "../../actions/types";
 
 const middlewares = [thunk];
 
